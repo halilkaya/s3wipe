@@ -68,21 +68,23 @@ Then run the script:
 ## Usage
 
 ```
-usage: s3wipe [-h] --path PATH --id ID --key KEY [--dryrun] [--quiet]
-              [--batchsize BATCHSIZE] [--maxqueue MAXQUEUE] [--delbucket]
+usage: s3wipe [-h] --path PATH [--id ID] [--key KEY] [--dryrun] [--quiet]
+              [--batchsize BATCHSIZE] [--maxqueue MAXQUEUE]
+              [--maxthreads MAXTHREADS] [--delbucket]
 
 Recursively delete all keys in an S3 path
 
 optional arguments:
-  -h, --help             show this help message and exit
-  --path PATH            S3 path to delete (e.g. s3://bucket/path)
-  --id ID                Your AWS access key ID
-  --key KEY              Your AWS secret access key
-  --dryrun               Don't delete. Print what we would have deleted
-  --quiet                Suprress all non-error output
-  --batchsize BATCHSIZE  # of keys to batch delete (default 100)
-  --maxqueue MAXQUEUE    Max size of deletion queue (default 10k)
-  --delbucket            If S3 path is a bucket path, delete the bucket also
+  -h, --help               show this help message and exit
+  --path PATH              S3 path to delete (e.g. s3://bucket/path)
+  --id ID                  Your AWS access key ID
+  --key KEY                Your AWS secret access key
+  --dryrun                 Don't delete. Print what we would have deleted
+  --quiet                  Suprress all non-error output
+  --batchsize BATCHSIZE    # of keys to batch delete (default 100)
+  --maxqueue MAXQUEUE      Max size of deletion queue (default 10 (k))
+  --maxthreads MAXTHREADS  Max number of threads (default 100)
+  --delbucket              If S3 path is a bucket path, delete the bucket also
 
 ```
 
